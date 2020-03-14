@@ -3,7 +3,7 @@ Keras auto-encoder.
 
 I an using the spatial pooler to compare images in a unsupervised way.
 
-To use the encoder ou will need a linux system (Ubuntu 18.04 x64) is preferred.
+To use the encoder you will need a linux system (Ubuntu 18.04 x64) is preferred.
 Start by downloading Mini-conda 3.7 x64, install conda tensorflow, pip install keras 
 , pillow, numba, scikit-learn , numpy etc.
 and finally head over to HTM CORE and install their implementation of HTM.
