@@ -23,7 +23,7 @@ ScalarEncoderParameters = htm.bindings.encoders.ScalarEncoderParameters
 import PIL
 
 SCALE_FACTOR = 2
-MATCH_FACTOR = 168
+MATCH_FACTOR = 138
 
 
 #  Auto encoder CNN for encoding MNISTdata set to 128 Dimensions embeddings
@@ -265,7 +265,7 @@ def spatial_pooler_encoer(pooler_data):
     # which have a greater overlap with the image we are searching for
     for _s, _img in zip(sdr_array, x_test):
         _x_ = hold_out2.getOverlap(_s)
-        if _x_ > 138 : # Adjust as required.
+        if _x_ > MATCH_FACTOR : # Adjust as required.
             _img_ = _img.reshape((28, 28))
             _img_ = (_img_ * 254).astype(np.uint8)
             im = Image.fromarray(_img_).convert('RGB')
@@ -279,6 +279,10 @@ def spatial_pooler_encoer(pooler_data):
 
 # All code is self contained wih no external dependencies.
 def main():
+    # I have already create the keras model
+    # and saved it, alonf with the embeddings for HTM
+    # If you need to run the model from scratch just uncomment
+    # the below methods
     # model = auto_encs()
     # new_model = pre_data(model)
     # save_model(new_model)
